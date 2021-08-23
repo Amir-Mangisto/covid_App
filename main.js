@@ -5,7 +5,7 @@ var inputTwo= document.getElementById("inputTwo");
 var inputThree = document.getElementById("inputThree");
 var inputFour = document.getElementById("inputFour");
 var inputFive = document.getElementById("inputFive");
-var testerArray = [{firstName:"amir",ID:5},{firstName:"shalom",ID:3},{firstName:"sara",ID:4}];
+var testerArray = [{firstName:"amir",id:5},{firstName:"shalom",id:3},{firstName:"sara",id:4}];
 buttonOne.onclick =function (){
     var client ={
         firstName:inputOne.value,
@@ -24,16 +24,14 @@ client.date = (`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`)
 
 //3
 for (let i = 0; i < testerArray.length; i++) {
-    if(client.ID!=testerArray[i].ID){
+    if(client.ID!=testerArray[i].id){
         testerArray.push(client)
         break
     }
-       else{
-        alert('there is client with this id already')
+        alert("there is client with this id already");
         break
-       } 
 }
-//4//5    
+// 4//5    
      let div = document.getElementById("container")
      div.innerHTML += `<br> firstName:${inputOne.value} <br> lastName:${inputTwo.value}<br> year:${inputThree.value}<br> id:${inputFour.value} <br> city:${inputFive.value}`
         
@@ -59,6 +57,7 @@ inputFive.oninput=function(){
 //7
 var button7 = document.getElementById("button7");
 var input7 = document.getElementById("input7")
+var input8 = document.getElementById("input8")
 var upperDiv = document.getElementById("upperDiv")
 var upperP = document.getElementById("upperP")
 
@@ -67,22 +66,23 @@ button7.onclick = function(){
     for (let i = 0; i < testerArray.length; i++) {
         if(testerArray[i].firstName == input7.value ){
             upperDiv.innerHTML = `there is client in this name:${input7.value}`
-        }else{
-            upperP.innerHTML = `not the same...`
         }
-        
+    }
+    if(upperDiv.innerHTML.length<2){
+        upperP.innerHTML = `not the same...`
     }
 }
 
 button8.onclick = function(){
-    for (let i = 1; i < testerArray.length; i++) {
-        if(testerArray[i].ID == input8.value ){
+    for (let i = 0; i < testerArray.length; i++) {
+        if(testerArray[i].id == input8.value ){
             upperDiv.innerHTML = `there is client with the same id:${input8.value}`
-        }else{
-            upperP.innerHTML = `not the same...`
         }
-        
     }
+    if(upperDiv.innerHTML.length<2){
+        upperP.innerHTML = `not the same...`
+    }
+    console.log(input8.value);
 }
 
 
