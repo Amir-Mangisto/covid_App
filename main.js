@@ -66,7 +66,7 @@ var upperP = document.getElementById("upperP")
 button7.onclick = function(){
     for (let i = 0; i < testerArray.length; i++) {
         if(testerArray[i].firstName == input7.value ){
-            upperDiv.innerHTML = `its the same name:${input7.value}`
+            upperDiv.innerHTML = `there is client in this name:${input7.value}`
         }else{
             upperP.innerHTML = `not the same...`
         }
@@ -77,7 +77,7 @@ button7.onclick = function(){
 button8.onclick = function(){
     for (let i = 1; i < testerArray.length; i++) {
         if(testerArray[i].ID == input8.value ){
-            upperDiv.innerHTML = `its the same id:${input8.value}`
+            upperDiv.innerHTML = `there is client with the same id:${input8.value}`
         }else{
             upperP.innerHTML = `not the same...`
         }
